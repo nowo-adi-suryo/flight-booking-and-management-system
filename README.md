@@ -22,15 +22,19 @@
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Initial Data
+
 ![alt text](image.png)
 
 Aircrafts:
+
 ![alt text](image-1.png)
 
 Destinations:
+
 ![alt text](image-2.png)
 
 Flight routes:
+
 ![alt text](image-3.png)
 
 ## Prerequisites

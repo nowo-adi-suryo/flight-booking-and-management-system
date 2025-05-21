@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Passenger area</center></p>
+    {{#if flightType}}
+      {{#ifEquals flightType 'direct'}}
+        <p>
+          Found direct flight: {{flightRoute.departureCity}} -> {{flightRoute.destinationCity}} (Day {{flightRoute.scheduledDay}})
+        </p>
+        <p>Aircraft: {{aircraft.aircraftName}}</p>
+        <p>{{currentSeatCapacity}} seats available.</p>
+
+        <form method="post" action="../flight/confirm_booking">
+          <input type="hidden" name="flightRouteIds[]" value="{{flightRoute.id}}" />
+          <input type="hidden" name="passengerId" value="{{passenger.id}}" />
+          <input type="hidden" name="aircraftId" value="{{aircraft.id}}" />
+          <input type="hidden" name="flightType" value="{{flightType}}" />
+          <button type="submit">Confirm booking</button>
+        </form>
+      {{else}}
+        <p>Found transit flight:</p>
+        <form method="post" action="../flight/confirm_booking">
+          <input type="hidden" name="passengerId" value="{{passenger.id}}" />
+          <input type="hidden" name="flightType" value="{{flightType}}" />
+          <ul>
+          {{#each flightRoute}}
+            <li>
+              <p>{{departureCity}} -> {{destinationCity}} (Day {{scheduledDay}})</p>          
+              <p>Aircraft: {{aircraft.aircraftName}}</p>
+              <p>{{currentSeatCapacity}} seats available.</p>
+            </li>
+            <input type="hidden" name="flightRouteIds[]" value="{{id}}" />
+            <input type="hidden" name="aircraftId" value="{{aircraft.id}}" />
+          {{/each}}
+          </ul>
+          <button type="submit">Confirm booking</button>
+        </form>
+      {{/ifEquals}}
+    {{else}}
+    <p>No available flights found.</p>
+    {{/if}}
+    <br />
+    <a href="/flight/booking_flight">Back</a>
+  </body>
+</html>

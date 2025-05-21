@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Passenger area</center></p>
+    {{#ifEquals message 'fail'}}
+      <p>Cancel booking failed.</p>
+    {{else}}
+      <p>Booking {{message}} has been cancelled.</p>
+      <p>Seat has been released and is now available.</p>
+    {{/ifEquals}}
+    <br />
+    <br />
+    <a href="/passenger">Back</a>
+  </body>
+</html>

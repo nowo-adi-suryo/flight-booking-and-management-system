@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Admin area</center></p>
+    <label>Create flight route</label>
+    <p>Available destinations:</p>
+    <ul>
+      {{#each destinations}}
+      <li>{{destinationName}}</li>
+      {{/each}}
+    </ul>
+    <form method="post" action="../flight/create_route">
+      <p>Enter departure city:</p>
+      <select name="departureCity">
+        {{#each destinations}}
+        <option value="{{destinationName}}">{{destinationName}}</option>
+        {{/each}}
+      </select>
+      <br />
+      <p>Enter destination city:</p>
+      <select name="destinationCity">
+        {{#each destinations}}
+        <option value="{{destinationName}}">{{destinationName}}</option>
+        {{/each}}
+      </select>
+      <br />
+      <p>Select aircraft:</p>
+      <select name="aircraftId">
+        {{#each aircrafts}}
+        <option value="{{id}}">{{aircraftName}}</option>
+        {{/each}}
+      </select>
+      <br />
+      <p>Enter scheduled day:</p>
+      <input name="scheduledDay" placeholder="Scheduled day"/>
+      <br />
+      <br />
+      <button type="submit">Create</button>
+    </form>
+    <br />
+    <a href="/admin">Back</a>
+  </body>
+</html>

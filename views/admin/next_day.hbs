@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Admin area</center></p>
+    <p>Advancing to the next day</p>
+    <p>Current day is now: {{currentDay}}</p>
+    <ul>
+    {{#each flightRoutes}}
+      <li><p>Flight {{departureCity}} -> {{destinationCity}} is scheduled for 
+        {{#ifEquals scheduledDay 0}}today. {{else}} the next {{scheduledDay}} days. {{/ifEquals}}</p></li>
+    {{/each}}
+    </ul>
+    <a href="/admin">Back</a>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Passenger area</center></p>
+    <p>Booking Status: {{#if bookingStatus}}<span style="color: green;">ON</span>{{else}}<span style="color: red;">OFF</span>{{/if}}</p>
+    <p>{{greetings}}</p>
+    <p>Current day: {{currentDay}}</p>
+    <p>Book a Flight</p>
+    <p>Available destinations:</p>
+    <ul>
+      {{#each destinations}}
+      <li>{{destinationName}}</li>
+      {{/each}}
+    </ul>
+    <form method="post" action="../flight/search">
+      <p>Enter departure city:</p>
+      <select name="departureCity">
+        {{#each destinations}}
+        <option value="{{destinationName}}">{{destinationName}}</option>
+        {{/each}}
+      </select>
+      <br />
+      <p>Enter destination city:</p>
+      <select name="destinationCity">
+        {{#each destinations}}
+        <option value="{{destinationName}}">{{destinationName}}</option>
+        {{/each}}
+      </select>
+      <br />
+      <br />
+      <button type="submit">Search</button>
+    </form>
+    <br />
+    <a href="/passenger">Back</a>
+  </body>
+</html>

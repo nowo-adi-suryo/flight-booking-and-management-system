@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Passenger area</center></p>
+    <p>Booking Status: {{#if bookingStatus}}<span style="color: green;">ON</span>{{else}}<span style="color: red;">OFF</span>{{/if}}</p>
+    <label>Passenger Login</label>
+    <form method="post" action="../passenger/login">
+      <p>Enter passenger name:</p>
+      <input name="passengerName" placeholder="Passenger name" />
+      <br />
+      <br />
+      {{#if bookingStatus}}
+      <button type="submit">Login</button>
+      {{else}}
+      <p>Passenger could login when booking status is ON</p>
+      {{/if}}
+    </form>
+    <br />
+    <a href="/">Exit</a>    
+  </body>
+</html>

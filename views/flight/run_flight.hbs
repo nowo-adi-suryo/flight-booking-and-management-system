@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Admin area</center></p>
+    <hr />
+    {{#each flightInfo}}
+      <p>Processing flight: {{departureCity}} -> {{destinationCity}}</p>
+      <p>Aircraft: {{aircraftName}}</p>
+      <p>Passengers boarding: {{countPassengers}}</p>
+      {{#each passengers}}
+        <p>- {{name}} (Seat #{{seat}})</p>
+      {{/each}}
+      <p>Flight status: DEPARTED from {{departureCity}}</p>
+      <p>Flight status: ARRIVED in {{destinationCity}}</p>
+      <p>All passengers have reached {{destinationCity}}.</p>
+      <hr />
+    {{/each}}
+    <br />
+    <a href="/admin">Back</a>
+  </body>
+</html>

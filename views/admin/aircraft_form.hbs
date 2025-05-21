@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Admin area</center></p>
+    <label>Register Aircraft</label>
+    <form method="post" action="../aircraft/create_aircraft">
+      <p>Enter aircraft name:</p>
+      <input name="aircraftName" placeholder="Aircraft names" />
+      <br />
+      <p>Enter seat capacity:</p>
+      <input name="seatCapacity" placeholder="Seat capacity"/>
+      <br />
+      <br />
+      <button type="submit">Create</button>
+    </form>
+    <br />
+    <a href="/admin">Back</a>
+  </body>
+</html>

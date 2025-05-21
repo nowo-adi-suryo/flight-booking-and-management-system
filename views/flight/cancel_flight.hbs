@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>    
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+  </head>
+  <body>
+    <p><center>Passenger area</center></p>
+    <div id="prantable">
+      {{#each tickets}}
+      <p>Passenger Name: {{passenger.passengerName}}</p>
+      <table>
+        <tr>
+          <th><span>Booking ID</span></th>
+          <th><span>Aircraft</span></th>
+          <th><span>Flight Route</span></th>
+          <th><span>Seat Number</span></th>
+        </tr>
+        <tr>
+          <td><span>{{bookingId}}</span></td>
+          <td><span>{{aircraft.aircraftName}}</span></td>
+          <td><span>{{flightRoute.departureCity}} - {{flightRoute.destinationCity}}</span></td>
+          <td><span>#{{seatNumber}}</span></td>
+        </tr>
+      </table>
+      <br />
+      {{/each}}
+    </div>
+    <br />
+    <form method="post" action="cancel_booking">
+      <p>Input Booking ID</p>
+      <input name="bookingId" value="" placeholder="Booking ID" />
+      <button type="submit">Cancel Booking</button>
+    </form>
+    <br />
+    <br />
+    <a href="/passenger">Back</a>
+  </body>
+  <script>
+    function printPageArea(areaID){
+      var printContent = document.getElementById(areaID).innerHTML;
+      var originalContent = document.body.innerHTML;
+      document.body.innerHTML = printContent;
+      window.print();
+      document.body.innerHTML = originalContent;
+  }
+  </script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Admin area</center></p>
+    <p>Booking Status: {{#if bookingStatus}}<span style="color: green;">ON</span>{{else}}<span style="color: red;">OFF</span>{{/if}}</p>
+    <label>Menu:</label>
+      <ul>
+        <li><a href="/admin/register_aircraft">Register Aircraft</a></li>
+        <li><a href="/admin/add_destination">Add Destination</a></li>
+        <li><a href="/admin/create_flight_route">Create Flight Route</a></li>
+        <li><a href="/admin/toggle_booking_service">{{#if bookingStatus}}Stop{{else}}Run{{/if}} Booking Service</a></li>
+        <li><a href="/admin/go_to_next_day">Go to Next Day</a></li>
+        <li><a href="/admin/run_flight">Run Flight</a></li>
+        <li><a href="/">Exit</a></li>
+      </ul>
+  </body>
+</html>

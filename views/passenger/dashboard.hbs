@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+  </head>
+  <body>
+    <p><center>Passenger area</center></p>
+    <p>Booking Status: {{#if bookingStatus}}<span style="color: green;">ON</span>{{else}}<span style="color: red;">OFF</span>{{/if}}</p>
+    <p>{{greetings}}</p>
+    <p>Current day: {{currentDay}}</p>
+    <label>Menu:</label>
+    <ul>
+      <li><a href="/flight/booking_flight">Book a Flight</a></li>
+      <li><a href="/flight/cancel_bookings">Cancel Bookings</a></li>
+      <li><a href="/">Exit</a></li>
+    </ul>
+  </body>
+</html>

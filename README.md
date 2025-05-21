@@ -42,7 +42,7 @@ Ensure you have the following installed before proceeding:
 
 ## Clone the repository
 
-- git clone https://github.com/nowoadisuryo/nodejs-assessment.git
+- [git clone https://github.com/nowoadisuryo/nodejs-assessment.git](https://github.com/nowo-adi-suryo/flight-booking-and-management-system.git)
 
 ## Project setup
 

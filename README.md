@@ -16,15 +16,19 @@ Passenger Features:
 - Booking management
 
 ## Initial Data
+
 ![alt text](image.png)
 
 Aircrafts:
+
 ![alt text](image-1.png)
 
 Destinations:
+
 ![alt text](image-2.png)
 
 Flight routes:
+
 ![alt text](image-3.png)
 
 ## Prerequisites
